@@ -1,0 +1,2 @@
+# null.json
+Hello
