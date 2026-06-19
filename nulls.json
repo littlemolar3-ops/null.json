@@ -1,39 +1,16 @@
-{
- "outbounds": [
-  {
-   "type": "psiphon",
-   "tag": "psiphon § 0"
-  }
- ],
- "endpoints": [
-  {
-   "type": "warp",
-   "tag": "m4 § 1",
-   "profile": {
-    "detour": "direct-fragment §hide§"
-   },
-   "unique_identifier": "A2",
-   "server": "",
-   "server_port": 0,
-   "noise": {
-    "fake_packet": {
-     "enabled": true,
-     "count": "40-80",
-     "size": "40-100",
-     "delay": "4-8",
-     "mode": "m4"
-    }
-   },
-   "mtu": 1280
-  },
-  {
-   "type": "warp",
-   "tag": "warp_in_warp § 2",
-   "profile": {
-    "detour": "direct-fragment §hide§"
-   },
-   "detour": "m4 § 1",
-   "unique_identifier": "A1",
+//profile-title: base64:8J+UpVBzaXBob24gJiBXQVJQIPCflKU=
+//profile-update-interval: 24
+//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
+//support-url: https://t.me/hiddify
+//profile-web-page-url: https://hiddify.com
+
+psiphon://auto/
+warp://A1@188.114.97.170:894#warp_in_warp -> warp://A2@188.114.97.170:894?ifp=40-80&ifps=40-100&ifpd=4-8&ifpm=m4#m4 
+warp://B1@auto#WarpInWarp✅ -> warp://B2@auto?ifpm=m4#LocalIP
+
+#warp://auto?ifp=10-20&ifps=40-100&ifpd=10-20#Warp_10-20_40-100_10-20
+#warp://auto?ifp=10-20&ifps=40-100&ifpd=30-200#Warp_10-20_40-100_30-50
+#warp://auto?ifp=10-20&ifps=40-100&ifpd=300-500#Warp_10-20_40-100_300-500
    "server": "",
    "server_port": 0,
    "noise": {
