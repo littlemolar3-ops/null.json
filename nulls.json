@@ -1,0 +1,88 @@
+{
+ "outbounds": [
+  {
+   "type": "psiphon",
+   "tag": "psiphon § 0"
+  }
+ ],
+ "endpoints": [
+  {
+   "type": "warp",
+   "tag": "m4 § 1",
+   "profile": {
+    "detour": "direct-fragment §hide§"
+   },
+   "unique_identifier": "A2",
+   "server": "",
+   "server_port": 0,
+   "noise": {
+    "fake_packet": {
+     "enabled": true,
+     "count": "40-80",
+     "size": "40-100",
+     "delay": "4-8",
+     "mode": "m4"
+    }
+   },
+   "mtu": 1280
+  },
+  {
+   "type": "warp",
+   "tag": "warp_in_warp § 2",
+   "profile": {
+    "detour": "direct-fragment §hide§"
+   },
+   "detour": "m4 § 1",
+   "unique_identifier": "A1",
+   "server": "",
+   "server_port": 0,
+   "noise": {
+    "fake_packet": {
+     "count": "",
+     "size": "",
+     "delay": ""
+    }
+   },
+   "mtu": 1280
+  },
+  {
+   "type": "warp",
+   "tag": "LocalIP § 3",
+   "profile": {
+    "detour": "direct-fragment §hide§"
+   },
+   "unique_identifier": "B2",
+   "server": "",
+   "server_port": 0,
+   "noise": {
+    "fake_packet": {
+     "enabled": true,
+     "count": "",
+     "size": "",
+     "delay": "",
+     "mode": "m4"
+    }
+   },
+   "mtu": 1280
+  },
+  {
+   "type": "warp",
+   "tag": "WarpInWarp✅ § 4",
+   "profile": {
+    "detour": "direct-fragment §hide§"
+   },
+   "detour": "LocalIP § 3",
+   "unique_identifier": "B1",
+   "server": "",
+   "server_port": 0,
+   "noise": {
+    "fake_packet": {
+     "count": "",
+     "size": "",
+     "delay": ""
+    }
+   },
+   "mtu": 1280
+  }
+ ]
+}
